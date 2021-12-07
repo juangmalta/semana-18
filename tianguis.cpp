@@ -28,14 +28,25 @@ int main()
      int CP, numExt, numInt;
 
      vector<Vendedor> vendedores;
+     
+
+     vector<Producto> productosPedro;
+     Producto chocolateAbuelita("Chocolate abuelita", "Rico chocolate", 20, 5, "Chocolates");
+     Producto kitkat("Chocolate kitkat", "Tipico kitkat", 15, 20, "Chocolates");
+     Producto hersheyBlanco("Chocolate hershey", "Chocolate buenisimo", 25, 17, "Chocolates");
+     productosPedro.push_back(chocolateAbuelita);
+     productosPedro.push_back(kitkat);
+     productosPedro.push_back(hersheyBlanco);
+
+
      Direccion direccion2("Zapopan", 45811, "Aviacion", "Santa margarita", 4587, 15);
-     Vendedor tienda_pedro("Pedro", "Pedro@gmail.com", "Chocolateria", " 5545456545", direccion2);
+     Vendedor tienda_pedro("Pedro", "Pedro@gmail.com", "Chocolateria", " 5545456545", direccion2, productosPedro);
 
      Direccion direccion3("Tonala", 45212, "Tonalita", "Tonalota", 32, 1);
-     Vendedor tienda_Miguel("Miguel", "Miguelito@tec.mx", "Cafeteria", "3345516241", direccion3);
+     Vendedor tienda_Miguel("Miguel", "Miguelito@tec.mx", "Cafeteria", "3345516241", direccion3, productosPedro);
 
      Direccion direccion4("Tlaquepauqe", 51262, "Tlaque", "Paque", 41, 2);
-     Vendedor tienda_Mauricio("Mauricio", "Mauricion@hotmail.com", "Paperleria", "512950192", direccion4);
+     Vendedor tienda_Mauricio("Mauricio", "Mauricion@hotmail.com", "Paperleria", "512950192", direccion4, productosPedro);
 
      vendedores.push_back(tienda_pedro);
      vendedores.push_back(tienda_Miguel);
