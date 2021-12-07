@@ -129,7 +129,7 @@ void Vendedor::printProductList() {
 
     for (int i = 0; i < Productos.size(); i++) {
 
-        cout << i << ".- " << Productos[i].getNombre() << " | Precio: " << Productos[i].getPrecio() << endl;
+        cout << i + 1 << ".- " << Productos[i].getNombre() << " | Precio: " << Productos[i].getPrecio() << endl;
 
     }
 

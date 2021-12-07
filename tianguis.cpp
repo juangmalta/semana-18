@@ -29,7 +29,7 @@ int main()
 
      vector<Vendedor> vendedores;
      
-
+     // Tienda de Pedro 
      vector<Producto> productosPedro;
      Producto chocolateAbuelita("Chocolate abuelita", "Rico chocolate", 20, 5, "Chocolates");
      Producto kitkat("Chocolate kitkat", "Tipico kitkat", 15, 20, "Chocolates");
@@ -38,15 +38,32 @@ int main()
      productosPedro.push_back(kitkat);
      productosPedro.push_back(hersheyBlanco);
 
-
      Direccion direccion2("Zapopan", 45811, "Aviacion", "Santa margarita", 4587, 15);
      Vendedor tienda_pedro("Pedro", "Pedro@gmail.com", "Chocolateria", " 5545456545", direccion2, productosPedro);
 
+     // Tienda de Miguel
+     vector<Producto> productosMiguel;
+     Producto mochaBlanco("Mocha Blanco", "Rico café con chocolate blanco", 35, 100, "Café");
+     Producto expresso("Café expresso", "Café tradicional", 28, 100, "Café");
+     Producto capuccino("Capuccino", "Capuccino tradicional", 30, 100, "Café");
+     productosMiguel.push_back(mochaBlanco);
+     productosMiguel.push_back(expresso);
+     productosMiguel.push_back(capuccino);
+
      Direccion direccion3("Tonala", 45212, "Tonalita", "Tonalota", 32, 1);
-     Vendedor tienda_Miguel("Miguel", "Miguelito@tec.mx", "Cafeteria", "3345516241", direccion3, productosPedro);
+     Vendedor tienda_Miguel("Miguel", "Miguelito@tec.mx", "Cafeteria", "3345516241", direccion3, productosMiguel);
+
+     // Tienda de Mauricio
+     vector<Producto> productosMauricio;
+     Producto cartulinaBlanca("Cartulina blanca", "Cartulina de 100x100 blanca", 10, 32, "Papeleria");
+     Producto plumaBic("Pluma bic", "Pluma tradicional marca bic", 8, 40, "Papeleria");
+     Producto liquidPaper("Liquid paper", "Para borrar pluma", 10, 97, "Papeleria");
+     productosMauricio.push_back(cartulinaBlanca);
+     productosMauricio.push_back(plumaBic);
+     productosMauricio.push_back(liquidPaper);
 
      Direccion direccion4("Tlaquepauqe", 51262, "Tlaque", "Paque", 41, 2);
-     Vendedor tienda_Mauricio("Mauricio", "Mauricion@hotmail.com", "Paperleria", "512950192", direccion4, productosPedro);
+     Vendedor tienda_Mauricio("Mauricio", "Mauricion@hotmail.com", "Papeleria", "512950192", direccion4, productosMauricio);
 
      vendedores.push_back(tienda_pedro);
      vendedores.push_back(tienda_Miguel);
@@ -94,7 +111,7 @@ int main()
      {
 
           int opcion;
-          cout << "1.- Mostrar vendedores disponibles | 2.-" << endl;
+          cout << "1.- Mostrar vendedores disponibles | 2.- Ver productos" << endl;
           cin >> opcion;
 
           if (opcion == 1)
@@ -105,7 +122,22 @@ int main()
                     vendedores[i].printVendedor();
                     cout << endl;
                }
+          } else if (opcion == 2) {
+
+               for (int i = 0; i < vendedores.size(); i++) {
+
+                    cout << i + 1 << ".- " << vendedores[i].getNombre() << endl;
+
+               }
+
+               int opcionVendedor;
+               cout << "Escoge un vendedor: ";
+               cin >> opcionVendedor;
+               opcionVendedor = opcionVendedor - 1;
+
+               vendedores[opcionVendedor].printProductList();
+
           }
      }
-     return 0;
+
 }
