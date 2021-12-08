@@ -21,6 +21,7 @@ using namespace std;
 #include "direccion.h"
 #include "vendedor.h"
 
+
 int main()
 {
      cliente persona;
@@ -28,8 +29,8 @@ int main()
      int CP, numExt, numInt;
 
      vector<Vendedor> vendedores;
-     
-     // Tienda de Pedro 
+
+     // Tienda de Pedro
      vector<Producto> productosPedro;
      Producto chocolateAbuelita("Chocolate abuelita", "Rico chocolate", 20, 5, "Chocolates");
      Producto kitkat("Chocolate kitkat", "Tipico kitkat", 15, 20, "Chocolates");
@@ -73,36 +74,53 @@ int main()
      cout << "                 R E G I S T R O                    " << endl;
      cout << "----------------------------------------------------" << endl;
      cout << "Ingresa tu nombre: ";
-     cin >> nombre;
-     cout << endl
-          << "Ingresa tu correo : ";
-     cin >> correo;
-     cout << endl
-          << "Ingresa tu numero de telefono: ";
-     cin >> telefono;
+     getline(cin, nombre);
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << "Ingresa tu correo : ";
+     getline(cin, correo);
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << "Ingresa tu numero de telefono: ";
+     getline(cin, telefono);
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
      cout << endl;
      cout << "----------------------------------------------------" << endl;
      cout << "                Registra direccion                  " << endl;
      cout << "----------------------------------------------------" << endl;
-     cout << endl
-          << "Ingresa tu calle: ";
-     cin >> calle;
-     cout << endl
-          << "Ingresa tu colonia";
-     cin >> colonia;
-     cout << endl
-          << "Ingresa tu numero exterior";
+     cout << endl;
+
+     cout << "Ingresa tu calle: ";
+     getline(cin, calle);
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << endl;
+     cout << "Ingresa tu colonia: ";
+     getline(cin, colonia);
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << endl;
+     cout << "Ingresa tu numero exterior: ";
      cin >> numExt;
-     cout << endl
-          << "Ingresa tu numero interior";
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << endl;
+     cout << "Ingresa tu numero interior: ";
      cin >> numInt;
-     cout << endl
-          << "Ingresa tu municipio: ";
-     cin >> municipio;
-     cout << endl
-          << "Ingresa tu CP: ";
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << endl;
+     cout << "Ingresa tu municipio: ";
+     getline(cin, municipio);
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cout << endl;
+     cout << "Ingresa tu CP: ";
      cin >> CP;
+     cin.clear();
+     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
      Direccion direccion1(municipio, CP, calle, colonia, numExt, numInt);
      cliente Persona_1(nombre, correo, telefono, direccion1);
@@ -122,12 +140,14 @@ int main()
                     vendedores[i].printVendedor();
                     cout << endl;
                }
-          } else if (opcion == 2) {
+          }
+          else if (opcion == 2)
+          {
 
-               for (int i = 0; i < vendedores.size(); i++) {
+               for (int i = 0; i < vendedores.size(); i++)
+               {
 
-                    cout << i + 1 << ".- " << vendedores[i].getNombre() << endl;
-
+                    cout << i + 1 << ".- " << vendedores[i].getNegocio() << endl;
                }
 
                int opcionVendedor;
@@ -136,8 +156,6 @@ int main()
                opcionVendedor = opcionVendedor - 1;
 
                vendedores[opcionVendedor].printProductList();
-
           }
      }
-
 }
