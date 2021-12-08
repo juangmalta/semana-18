@@ -182,10 +182,10 @@ int main()
                cout << "Gracias por comprar con nosotros, este es el resumen de tu compra" << endl;
                for (int i = 0; i < productosComprados.size(); i++)
                {
-                    cout<<productosComprados[i].getNombre()<<endl;
+                    cout << productosComprados[i].getNombre() << endl;
                }
-               
-               cout<<"Pedido enviado a la tienda seleccionada"<<endl;
+
+               cout << "Pedido enviado a la tienda seleccionada" << endl;
                return 0;
           }
      }
