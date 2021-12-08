@@ -76,15 +76,15 @@ int main()
      cout << "Ingresa tu nombre: ";
      getline(cin, nombre);
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << "Ingresa tu correo : ";
      getline(cin, correo);
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << "Ingresa tu numero de telefono: ";
      getline(cin, telefono);
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
 
      cout << endl;
      cout << "----------------------------------------------------" << endl;
@@ -95,32 +95,32 @@ int main()
      cout << "Ingresa tu calle: ";
      getline(cin, calle);
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << endl;
      cout << "Ingresa tu colonia: ";
      getline(cin, colonia);
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << endl;
      cout << "Ingresa tu numero exterior: ";
      cin >> numExt;
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << endl;
      cout << "Ingresa tu numero interior: ";
      cin >> numInt;
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << endl;
      cout << "Ingresa tu municipio: ";
      getline(cin, municipio);
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
      cout << endl;
      cout << "Ingresa tu CP: ";
      cin >> CP;
      cin.clear();
-     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     cin.ignore();
 
      Direccion direccion1(municipio, CP, calle, colonia, numExt, numInt);
      cliente Persona_1(nombre, correo, telefono, direccion1);
@@ -129,7 +129,7 @@ int main()
      {
 
           int opcion;
-          cout << "1.- Mostrar vendedores disponibles | 2.- Ver productos" << endl;
+          cout << "1.- Mostrar vendedores disponibles | 2.- Comprar" << endl;
           cin >> opcion;
 
           if (opcion == 1)
