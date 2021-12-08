@@ -43,9 +43,9 @@ int main()
 
      // Tienda de Miguel
      vector<Producto> productosMiguel;
-     Producto mochaBlanco("Mocha Blanco", "Rico café con chocolate blanco", 35, 100, "Café");
-     Producto expresso("Café expresso", "Café tradicional", 28, 100, "Café");
-     Producto capuccino("Capuccino", "Capuccino tradicional", 30, 100, "Café");
+     Producto mochaBlanco("Mocha Blanco", "Rice café con chocolate blanco", 35, 100, "Cafe");
+     Producto expresso("Cafe expresso", "Cafe tradicional", 28, 100, "Cafe");
+     Producto capuccino("Capuccino", "Capuccino tradicional", 30, 100, "Cafe");
      productosMiguel.push_back(mochaBlanco);
      productosMiguel.push_back(expresso);
      productosMiguel.push_back(capuccino);

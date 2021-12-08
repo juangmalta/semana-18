@@ -99,7 +99,7 @@ void Producto::printProducto()
 {
     cout << "-------------------------- PRODUCTO -----------------------------------" << endl;
     cout << "Nombre: " << nombre << endl;
-    cout << "Descripción: " << descripcion << endl;
+    cout << "Descripcion: " << descripcion << endl;
     cout << "Precio: " << precio << endl;
     cout << "Stock: " << stock << endl;
     cout << "Categoria: " << categoria << endl;
