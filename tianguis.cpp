@@ -21,7 +21,6 @@ using namespace std;
 #include "direccion.h"
 #include "vendedor.h"
 
-
 int main()
 {
      cliente persona;
@@ -129,7 +128,9 @@ int main()
      {
 
           int opcion;
-          cout << "1.- Mostrar vendedores disponibles | 2.- Comprar" << endl;
+
+          cout << "1.- Mostrar vendedores disponibles | 2.- Comprar productos" << endl;
+
           cin >> opcion;
 
           if (opcion == 1)
@@ -149,13 +150,43 @@ int main()
 
                     cout << i + 1 << ".- " << vendedores[i].getNegocio() << endl;
                }
-
+               string seguirComprando = "si";
+               vector<Producto> productosComprados;
                int opcionVendedor;
-               cout << "Escoge un vendedor: ";
-               cin >> opcionVendedor;
-               opcionVendedor = opcionVendedor - 1;
+               while (seguirComprando == "si")
+               {
 
-               vendedores[opcionVendedor].printProductList();
+                    cout << "Escoge un vendedor: ";
+                    cin >> opcionVendedor;
+                    opcionVendedor = opcionVendedor - 1;
+
+                    vendedores[opcionVendedor].printProductList();
+
+                    int opcionProducto;
+
+                    cout << "Elige el producto a comprar" << endl;
+
+                    cin >> opcionProducto;
+
+                    productosComprados.push_back(vendedores[opcionVendedor].getProducto(opcionProducto - 1));
+
+                    cout << endl
+                         << vendedores[opcionVendedor].printProductoVendedor(opcionProducto) << " agregado al pedido";
+
+                    cout << endl
+                         << "¿Deseas seguir comprando?" << endl;
+
+                    cin >> seguirComprando;
+               }
+
+               cout << "Gracias por comprar con nosotros, este es el resumen de tu compra" << endl;
+               for (int i = 0; i < productosComprados.size(); i++)
+               {
+                    cout<<productosComprados[i].getNombre()<<endl;
+               }
+               
+               cout<<"Pedido enviado a la tienda seleccionada"<<endl;
+               return 0;
           }
      }
 }

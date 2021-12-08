@@ -38,6 +38,7 @@ public:
 
     void printVendedor();
     void printProductList();
+    string printProductoVendedor(int a);
 
 };
 
@@ -133,6 +134,10 @@ void Vendedor::printProductList() {
 
     }
 
+}
+
+string Vendedor::printProductoVendedor(int a){
+    return Productos[a-1].getNombre();
 }
 
 #endif
